@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Book Info</title>
+  </head>
+  <body>
+    <p>Member ID: {{ member_id }}</p>
+    <h1>Search Book Info</h1>
+    
+    <ul>
+     
+      
+
+<!-- ***************************************************************-->
+
+      <form action="{{ url_for('available_books_by_genre') }}" method="GET">
+        <label for="genre">Search Available Books by Genre:</label>
+        <input type="text" name="genre" id="genre" placeholder="Ex: sports, science" required>
+        <button type="submit">Search</button>
+    </form><br><br>
+      
+<!-- ***************************************************************-->
+      <form action="{{ url_for('get_book_by_keyword') }}" method="GET">
+        <label for="isbn">Search Books by Keyword:</label>
+        <input type="text" name="keyword" id="keyword" placeholder="Ex: The, Middle, Stories"" required>
+        <button type="submit">Search</button>
+    </form><br><br>
+
+      <form action="{{ url_for('get_book_by_isbn') }}" method="GET">
+        <label for="isbn">Search Books by ISBN:</label>
+        <input type="text" name="isbn" id="isbn" placeholder="Ex: 399135782, 1567407781" required>
+        <button type="submit">Search</button>
+    </form><br><br>
+      
+    <form action="{{ url_for('get_book_by_author') }}" method="GET">
+      <label for="author">Search Books by Author:</label>
+      <input type="text" name="author" id="author" placeholder="Ex: Ann Beattie" required>
+      <button type="submit">Search</button>
+  </form><br><br>
+  
+      
+    <form action="{{ url_for('get_book_by_year') }}" method="GET">
+      <label for="year">Search Books by Year:</label>
+      <input type="text" name="year" id="year" required>
+      <button type="submit">Search</button>
+  </form><br><br>
+
+  <form action="{{ url_for('get_book_by_publisher') }}" method="GET">
+    <label for="publisher">Search Books by Publisher:</label>
+    <input type="text" name="publisher" id="publisher" placeholder="Ex: Ballantine Books" required>
+    <button type="submit">Search</button>
+</form><br><br>
+    
+
+    </ul>
+    
+  </body>
+</html>

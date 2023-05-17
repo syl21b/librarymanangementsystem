@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Update Librarian Info</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<h1>Update Librarian Info</h1>
+	
+    {% if error %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+    {% endif %}
+
+    {% if message %}
+    <div class="alert alert-success" role="alert">{{ message }}</div>
+  {% endif %}
+  
+	
+  <form method="POST" action="{{ url_for('update_librarian', librarian_id=librarian_id) }}">
+	<label for="librarian_id">Librarian ID: </label>
+	<input type="text" id="librarian_id" name="librarian_id"  value="{{ librarian_id }}" ><br><br>
+	<!--input type="text" id="librarian_id" name="librarian_id"  value="{{ librarian_id }}" readonly><br><br-->
+
+	<!--p>You can't change your Librarian ID</p-->
+	
+	<label for="change_phone">Change Phone Number:</label>
+	<input type="radio" id="yes" name="change_phone" value="yes" required>
+	<label for="yes">Yes</label>
+	<input type="radio" id="no" name="change_phone" value="no">
+	<label for="no">No</label><br><br>
+	<label for="phone_number">New Phone Number (XXX-XXX-XXXX):</label>
+    <input type="tel" id="phone_number" name="phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br><br>
+    
+	<label for="change_password">Change Password:</label>
+    <input type="radio" id="yes" name="change_password" value="yes" required>
+    <label for="yes">Yes</label>
+    <input type="radio" id="no" name="change_password" value="no">
+    <label for="no">No</label><br><br>
+        
+	<label for="password">New Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+
+	<div class="form-group">
+		<label for="password">Password (Confirm)</label>
+		<input type="password" class="form-control" id="password" name="password" placeholder="Confirm password"/>
+	</div>
+
+	<input type="submit" value="Submit">
+  </form>
+</body>
+</html>

@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block title %}Home (Librarian) - {{ super() }}{% endblock %}
+
+{% block content %}
+
+  <h1>Welcome Librarian!</h1>
+  <p>You have access to all the features of the Library Management System.</p>
+
+{% endblock %}
+
+{% if error %}
+<div class="alert alert-danger" role="alert">{{ error }}</div>
+{% endif %}
+
+{% if message %}
+<div class="alert alert-success" role="alert">{{ message }}</div>
+{% endif %}
+
+{% block update_book %}
+
+  <div class="container">
+    <h1>Update Book Info</h1>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+        <label for="book_id">Book ID:</label>
+        <input type="text" class="form-control" id="book_id" name="book_id">
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+  </div>
+
+{% endblock %}
+
+
+{% block delete_book %}
+
+  <div class="container">
+    <h1>Delete Book</h1>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+        <label for="book_id">Book ID:</label>
+        <input type="text" class="form-control" id="book_id" name="book_id">
+      </div>
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+  </div>
+
+{% endblock %}
+
+
+{% block create_member %}
+
+  <div class="container">
+    <h1>Create Member Info</h1>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      {% include "create_member.html" %}
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+
+{% endblock %}
+
+
+{% block update_member %}
+
+  <div class="container">
+    <h1>Update Member Info</h1>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+        <label for="member_id">Member ID:</label>
+        <input type="text" class="form-control" id="member_id" name="member_id">
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+  </div>
+
+{% endblock %}
+
+
+{% block delete_member %}
+
+  <div class="container">
+    <h1>Delete Membership</h1>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+        <label for="member_id">Member ID:</label>
+        <input type="text" class="form-control" id="member_id" name="member_id">
+      </div>
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+  </div>
+
+{% endblock %}
+
+
+{% block update_librarian %}
+
+  <div class="container">
+    <h1>Update Librarian Info</h1>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+        <label for="librarian_id">Librarian ID:</label>
+        <input type="text" class="form-control" id="librarian_id" name="librarian_id">
+      </div>
+      <button type="submit" class="btn btn-danger">Update</button>
+    </form>
+  </div>
+
+{% endblock %}
+
+
+{% block delete_librarian %}
+
+  <div class="container">
+    <h1>Delete Librarian Info</h1>
+    <form method="POST">
+       <div class="form-group"></div>
+           <label>Librarian ID:</label>
+           <input type="text" name="librarian_id"><br><br>
+       </div>
+       <button type="submit" class="btn btn-danger">Delete</button>
+   </form>
+</div>
+{% endblock %}
+
+</body>
+</html>

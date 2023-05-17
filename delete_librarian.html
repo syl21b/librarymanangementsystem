@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Delete Librarian Info</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+	<p>Librarian ID: {{ librarian_id }}</p>
+	<h1>Delete Librarian Info</h1>
+	
+    {% if error %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+    {% endif %}
+
+    {% if message %}
+    <div class="alert alert-success" role="alert">{{ message }}</div>
+  {% endif %}
+	<form method="POST">
+		<label>Librarian ID:</label>
+		<input type="text" name="librarian_id1"><br><br>
+		<p>Are you sure you want to delete this Librarian ID?</p>
+		<button type="submit" name="choice" value="yes">Yes</button>
+		<button type="submit" name="choice" value="no">No</button>
+	</form>
+</body>
+</html>
+

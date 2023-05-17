@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+
+	<title>Delete Membership</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<h1>Delete Membership</h1>
+	
+    {% if error %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+    {% endif %}
+
+    {% if message %}
+    <div class="alert alert-success" role="alert">{{ message }}</div>
+  {% endif %}
+	<form method="POST">
+		<label for="member_id">Member ID:</label> 
+		<input type="text" id="member_id" name="member_id" required><br><br>
+		<label for="delete_account">Do you want to delete your account?</label>
+		<input type="radio" id="yes" name="delete_account" value="yes" required>
+		<label for="yes">Yes</label>
+		<input type="radio" id="no" name="delete_account" value="no">
+		<label for="no">No</label><br><br>
+		<input type="submit" value="Delete">
+
+	</form>
+</body>
+</html>

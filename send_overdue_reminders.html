@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Overdue Reminder Results</title>
+</head>
+<body>
+	<h1>Overdue Reminder Results</h1>
+	
+	{% if message %}
+		<p>{{ message }}</p>
+	{% endif %}
+	{% if errors %}
+		<ul>
+		{% for error in errors %}
+			<li>{{ error }}</li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+
+
+	<table>
+		<thead>
+		  <tr>
+			<th>Email</th>
+			<th>Subject</th>
+			<th>Message</th>
+			
+		  </tr>
+		</thead>
+		<tbody>
+		  {% for list1 in list1 %}
+			<tr>
+			  <td>{{ list1[0] }}</td>
+			  <td>{{ list1[1] }}</td>
+			  <td>{{ list1[2] }}</td>
+			 
+			  
+			</tr>
+		  {% endfor %}
+		</tbody>
+	  </table>
+
+</body>
+</html>

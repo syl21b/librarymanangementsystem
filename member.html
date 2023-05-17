@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Home (Member) - {{ super() }}{% endblock %}
+
+{% block content %}
+
+<h1>Welcome Member!</h1>
+<p>You can log in, sign up, and update your personal information.</p>
+{% endblock %}
+
+{% if error %}
+<div class="alert alert-danger" role="alert">{{ error }}</div>
+{% endif %}
+
+{% if message %}
+<div class="alert alert-success" role="alert">{{ message }}</div>
+{% endif %}
+
+
+</body>
+</html>

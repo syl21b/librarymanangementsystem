@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>Update Book</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+    <p>Librarian ID: {{ librarian_id }}</p>
+    <h1>Update Book</h1>
+    
+    {% if error %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+    {% endif %}
+
+    {% if message %}
+    <div class="alert alert-success" role="alert">{{ message }}</div>
+  {% endif %}
+
+  
+  <form method="post" action="{{ url_for('update_book', librarian_id=librarian_id) }}">
+        <p>Please enter a valid Book ID</p>
+        <label for="book_id">Book ID: </label>
+        <input type="text" id="book_id" name="book_id" value="{{ book_id }}"><br><br>
+        
+
+        <label for="isbn">ISBN:</label>
+        <input type="text" id="isbn" name="isbn">
+        <label for="isbn_yes">Yes</label>
+        <input type="radio" id="isbn_yes" name="isbn_choice" value="yes">
+        <label for="isbn_no">No</label>
+        <input type="radio" id="isbn_no" name="isbn_choice" value="no"><br><br>
+
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title">
+        <label for="title_yes">Yes</label>
+        <input type="radio" id="title_yes" name="title_choice" value="yes">
+        <label for="title_no">No</label>
+        <input type="radio" id="title_no" name="title_choice" value="no"><br><br>
+
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre">
+        <label for="genre_yes">Yes</label>
+        <input type="radio" id="genre_yes" name="genre_choice" value="yes">
+        <label for="genre_no">No</label>
+        <input type="radio" id="genre_no" name="genre_choice" value="no"><br><br>
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author">
+        <label for="author_yes">Yes</label>
+        <input type="radio" id="author_yes" name="author_choice" value="yes">
+        <label for="author_no">No</label>
+        <input type="radio" id="author_no" name="author_choice" value="no"><br><br>
+
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year">
+        <label for="year_yes">Yes</label>
+        <input type="radio" id="year_yes" name="year_choice" value="yes">
+        <label for="year_no">No</label>
+        <input type="radio" id="year_no" name="year_choice" value="no"><br><br>
+
+        <label for="publisher">Publisher:</label>
+        <input type="text" id="publisher" name="publisher">
+        <label for="publisher_yes">Yes</label>
+        <input type="radio" id="publisher_yes" name="publisher_choice" value="yes">
+        <label for="publisher_no">No</label>
+        <input type="radio" id="publisher_no" name="publisher_choice" value="no"><br><br>
+
+        <label for="url1">URL:</label>
+        <input type="text" id="URL" name="URL">
+        <label for="url_yes">Yes</label>
+        <input type="radio" id="url_yes" name="url_choice" value="yes">
+        <label for="url_no">No</label>
+        <input type="radio" id="url_no" name="url_choice" value="no"><br><br>
+
+        <input type="submit" value="Update Book">
+    </form>
+</body>
+</html>

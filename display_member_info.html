@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>INFORMATION OF MEMBER</title>
+  </head>
+  <body>
+    <h1>INFORMATION OF MEMBER: {{ member_id }}</h1> 
+  
+   
+{% if result %}
+    <div>
+        <p>First Name: {{ result[1] }}</p>
+        <p>Last Name: {{ result[2] }}</p>
+        <p>Phone Number: {{ result[3] }}</p>
+        <p>Email: {{ result[4] }}</p><br><br>
+      
+        {% if result[8] %}
+            <p>This member is borrowing a book: {{result[8]}}</p>
+            <p>Issue Date (YYYY-MM-DD): {{ result[5] }}</p>
+            <p>Due Date (YYYY-MM-DD): {{ result[6] }}</p>
+            <p>Return Status: {{ result[7] }}</p>
+        
+            <td><img src="{{ result[18] }}" alt="book cover"></td>
+            <p>ISBN: {{ result[11] }}</p>
+            <p>Title: {{ result[12] }}</p>
+            <p>Genre: {{ result[13] }}</p>
+            <p>Author: {{ result[14] }}</p>
+            <p>Year: {{ result[15] }}</p>
+            <p>Publisher: {{ result[16] }}</p>
+            
+             
+             
+             <p>Record: {{ result[9] }}</p>
+        {% else %}
+            <p>This member has not borrowed any books.</p>  
+               
+        {% endif %}
+    </div>
+{% else %}
+    <p>No information found for member {{ member_id }}</p>
+{% endif %}
+
+
+ 
+  </body>
+</html>

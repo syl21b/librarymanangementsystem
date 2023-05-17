@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Show Record</title>
+  </head>
+  <body>
+    <h1>Show Record</h1>
+    <form method="POST" action="{{ url_for('show_record') }}">
+      <label for="member_id">Member ID:</label>
+      <input type="text" id="member_id" name="member_id">
+      <br>
+      <input type="submit" value="Show Record">
+    </form>
+
+    {% if book_info %}
+      <h2>Member ID: {{ member_id }}</h2>
+      <table>
+        <tr>
+          <th>Book ID</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Genre</th>
+          <th>Year Published</th>
+          <th>Publisher</th>
+          <th>URL</th>
+          <th>URL2</th>
+          <th>URL3</th>
+        </tr>
+        {% for book in book_info %}
+          <tr>
+            <td>{{ book[0] }}</td>
+            <td>{{ book[1] }}</td>
+            <td>{{ book[2] }}</td>
+            <td>{{ book[3] }}</td>
+            <td>{{ book[4] }}</td>
+            <td>{{ book[5] }}</td>
+            <td>{{ book[6] }}</td>
+            <td>{{ book[7] }}</td>
+            <td>{{ book[8] }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% elif member_id is not none %}
+      <p>No books borrowed by Member ID {{ member_id }}</p>
+    {% endif %}
+  </body>
+</html>

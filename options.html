@@ -1,0 +1,9 @@
+{% if user_type == 'librarian' %}
+    <form method="get" action="{{ url_for('librarian') }}">
+        <button type="submit" class="btn btn-primary">I am a librarian</button>
+    </form>
+{% elif user_type == 'member' %}
+    <form method="get" action="{{ url_for('register') }}">
+        <button type="submit" class="btn btn-primary">I am a member</button>
+    </form>
+{% endif %}

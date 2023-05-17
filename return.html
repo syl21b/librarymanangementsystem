@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Return Book</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  </head>
+  <body>
+    <h1>Return Book</h1>
+    
+    {% if error %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+    {% endif %}
+
+    {% if message %}
+    <div class="alert alert-success" role="alert">{{ message }}</div>
+  {% endif %}
+    <form action="{{ url_for('return_book', member_id=member_id) }}" method="post">
+        <label for="member_id">Member ID:</label>
+        <input type="text" id="member_id" name="member_id" required><br><br>
+
+      
+      <label for="book_id">Book ID:</label>
+      <input type="text" name="book_id" id="book_id" required><br><br>
+	  
+      <p>Please choose "Yes" if you want to return your book.</p>
+      <label for="returnstatus">Return Book?</label>
+      <select name="returnstatus" id="returnstatus">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

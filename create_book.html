@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create New Book</title>
+</head>
+<body>
+	<p>Librarian ID: {{ librarian_id }}</p>
+    <meta charset="UTF-8">
+	<h1>Create New Book</h1>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	
+    <div class="container">
+		<div class="row justify-content-center mt-5">
+			<div class="col-md-6">
+	
+	
+    <form method="post" action="/create_book">
+        <p> Book ID will be automatically created! </p>
+
+		<label for="isbn">ISBN:</label>
+		<input type="text" name="isbn" required><br><br>
+
+		<label for="title">Title:</label>
+		<input type="text" name="title" required><br><br>
+
+		<label for="genre">Genre:</label>
+		<input type="text" name="genre" required><br><br>
+
+		<label for="author">Author:</label>
+		<input type="text" name="author" required><br><br>
+
+		<label for="year">Year:</label>
+		<input type="number" name="year" required><br><br>
+
+		<label for="publisher">Publisher:</label>
+		<input type="text" name="publisher" required><br><br>
+
+		<label for="url1">URL:</label>
+		<input type="text" name="url1"><br><br>
+
+		<input type="submit" value="Submit">
+ 
+ 
+	</form>
+
+   </div>
+</div>
+</div>
+
+</body>
+</html>

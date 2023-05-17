@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+
+{% if error %}
+<div class="alert alert-danger" role="alert">{{ error }}</div>
+{% endif %}
+
+{% if message %}
+<div class="alert alert-success" role="alert">{{ message }}</div>
+{% endif %}
+{% block content %}
+  <h2>Logout</h2>
+  <p>You have been logged out.</p>
+{% endblock %}

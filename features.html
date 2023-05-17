@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Library Management System Features</title>
+  </head>
+  <body>
+   <p>Librarian ID: {{ librarian_id }}</p>
+    <h1>Library Management System Features</h1>
+    
+    <ul>
+     
+      
+
+     
+      
+      
+
+<!-- ***************************************************************-->
+
+      <form action="{{ url_for('available_books_by_genre') }}" method="GET">
+        <label for="genre">Search Available Books by Genre:</label>
+        <input type="text" name="genre" id="genre" placeholder="Ex: sports, science" required>
+        <button type="submit">Search</button>
+    </form><br><br>
+      
+<!-- ***************************************************************-->
+      <form action="{{ url_for('get_book_by_keyword') }}" method="GET">
+        <label for="isbn">Search Books by Keyword:</label>
+        <input type="text" name="keyword" id="keyword" placeholder="Ex: The, Middle, Stories"" required>
+        <button type="submit">Search</button>
+    </form><br><br>
+
+      <form action="{{ url_for('get_book_by_isbn') }}" method="GET">
+        <label for="isbn">Search Books by ISBN:</label>
+        <input type="text" name="isbn" id="isbn" placeholder="Ex: 399135782, 1567407781" required>
+        <button type="submit">Search</button>
+    </form><br><br>
+      
+    <form action="{{ url_for('get_book_by_author') }}" method="GET">
+      <label for="author">Search Books by Author:</label>
+      <input type="text" name="author" id="author" placeholder="Ex: Ann Beattie" required>
+      <button type="submit">Search</button>
+  </form><br><br>
+  
+      
+    <form action="{{ url_for('get_book_by_year') }}" method="GET">
+      <label for="year">Search Books by Year:</label>
+      <input type="text" name="year" id="year" required>
+      <button type="submit">Search</button>
+  </form><br><br>
+
+  <form action="{{ url_for('get_book_by_publisher') }}" method="GET">
+    <label for="publisher">Search Books by Publisher:</label>
+    <input type="text" name="publisher" id="publisher" placeholder="Ex: Ballantine Books" required>
+    <button type="submit">Search</button>
+</form><br><br>
+    <!-- ***************************************************************-->
+ <form action="{{ url_for('show_record_by_memberid') }}" method="GET">
+          <label for="member_id">View Member Record:</label>
+          <input type="text" name="member_id" id="member_id" placeholder="Enter Member ID" required>
+          <button type="submit">View</button>
+      </form><br><br>
+
+
+      <form action="{{ url_for('last_borrow_book_by_memberid') }}" method="GET">
+        <label for="member_id">Find the Most Recently Borrowed Book:</label>
+        <input type="text" name="member_id" id="member_id" placeholder="Enter Member ID" required>
+        <button type="submit">Find</button>
+    </form><br><br>
+
+
+<form action="{{ url_for('get_books_by_member') }}" method="GET">
+      <form action="{{ url_for('get_books_by_member') }}" method="GET">
+        <label for="member_id">View the Currently Borrowing Book by Member ID:</label> 
+        <input type="text" id="member_id" name="member_id" placeholder="Enter Member ID" required>
+        <button type="submit">View</button>
+      </form><br><br>
+      
+<!-- ***************************************************************-->
+      <form action="{{ url_for('get_member_info_borrowing_book') }}" method="GET">
+        <label for="book_id">Find Member Info by Book_ID</label>
+        <input type="text" name="book_id" id="book_id" placeholder="Enter Book ID" required>
+        <button type="submit">Find</button>
+    </form><br><br>
+
+      
+      <li><a href="/available_books_count">View Available Books Count</a></li><br><br>
+
+      <li><a href="/books_by_genre">Counting Available Books by Genre</a></li><br><br>
+      
+      <li><a href="/overdue-members">View Overdue Member</a></li><br><br>
+
+      <li><a href="/send_overdue_reminders">Send Overdue Reminder</a></li><br><br>
+
+    </ul>
+    
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Available Books Count</title>
+  </head>
+  <body>
+    <h1>Available Books Count</h1>
+    <p>{{message}}</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Book-ID</th>
+          <th>ISBN</th>
+          <th>Title</th>
+          <th>Genre</th>
+          <th>Author</th>
+          <th>Year-Of-Publication</th>
+          <th>Publisher</th>
+          <th>Availablity</th>
+          <th>Image</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for book in books %}
+          <tr>
+            <td>{{ book[0] }}</td>
+            <td>{{ book[1] }}</td>
+            <td>{{ book[2] }}</td>
+            <td>{{ book[3] }}</td>
+            <td>{{ book[4] }}</td>
+            <td>{{ book[5] }}</td>
+            <td>{{ book[6] }}</td>
+            <td>{{ book[7] }}</td>
+            <td><img src="{{ book[8] }}" alt="book cover"></td>
+            
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
